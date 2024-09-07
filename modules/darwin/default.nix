@@ -5,7 +5,7 @@
     experimental-features = nix-command flakes
   '';
 
-  programs.zsh.enable = strue;
+  programs.zsh.enable = true;
 
   environment = {
     shells = with pkgs; [ bash zsh ];
@@ -14,10 +14,10 @@
     pathsToLink = [ "/Applications" ];
     systemPackages = with pkgs; [
       coreutils
-      sublime4
-      sublime-merge
-      jetbrains-toolbox
-      jetbrains.webstorms
+      # sublime4
+      # sublime-merge
+      # jetbrains-toolbox
+      # jetbrains.webstorms
     ];
   };
 
@@ -44,6 +44,7 @@
       mru-spaces = false;
       mineffect = "scale";
       show-recents = false;
+      show-process-indicators = true;
       minimize-to-application = true;
       mouse-over-hilite-stack = true;
     };
@@ -72,9 +73,11 @@
     };
     # N
     NSGlobalDomain = {
-      KeyRepeat = 1;
-      InitialKeyRepeat = 14;
+      KeyRepeat = null;
+      InitialKeyRepeat = null;
       AppleShowAllExtensions = true;
+      AppleMetricUnits = 1;
+      AppleTemperatureUnit = "Celsius";
     };
     # O
     # P
@@ -90,6 +93,7 @@
     # T
     trackpad = {
       Clicking = true;
+      TrackpadRightClick = true;
       TrackpadThreeFingerDrag = true;
     };
     # U
@@ -115,13 +119,16 @@
       "affinity-photoss"
       "amethyst"
       "fork"
+      "keka"
       "linear-linear"
-      "raycast"
-      "setapp"
       "proton-drive"
       "proton-mail"
       "proton-pass"
       "proton-vpn"
+      "raycast"
+      "setapp"
+      "sublime-merge"
+      "sublime-text"
       "vcam"
     ];
   };
