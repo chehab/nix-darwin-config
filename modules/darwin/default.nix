@@ -5,14 +5,20 @@
     experimental-features = nix-command flakes
   '';
 
-  programs.zsh.enable = true;
+  programs.zsh.enable = strue;
 
   environment = {
     shells = with pkgs; [ bash zsh ];
     loginShell = pkgs.zsh;
-    systemPackages = [ pkgs.coreutils ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
+    systemPackages = with pkgs; [
+      coreutils
+      sublime4
+      sublime-merge
+      jetbrains-toolbox
+      jetbrains.webstorms
+    ];
   };
 
   security.pam.enableSudoTouchIdAuth = true;
@@ -100,8 +106,23 @@
     caskArgs.no_quarantine = true;
     global.brewfile = true;
     masApps = { };
-    casks = [ "aerospace" "amethyst" "raycast" ];
     taps = [ "nikitabobko/tap" "fujiapple852/trippy" ];
     brews = [ "trippy" ];
+    casks = [
+      "arc"
+      "aerospace"
+      "affinity-designer"
+      "affinity-photoss"
+      "amethyst"
+      "fork"
+      "linear-linear"
+      "raycast"
+      "setapp"
+      "proton-drive"
+      "proton-mail"
+      "proton-pass"
+      "proton-vpn"
+      "vcam"
+    ];
   };
 }
