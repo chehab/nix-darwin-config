@@ -52,7 +52,7 @@
     # F
     finder = {
       AppleShowAllExtensions = true;
-      _FXShowPosixPathInTitle = true;
+      _FXShowPosixPathInTitle = false;
       FXPreferredViewStyle = "clmv";
       FXDefaultSearchScope = "SCcf"; # search current folder
       ShowPathbar = true;
